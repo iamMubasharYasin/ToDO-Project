@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using ToDoProject.Application.Interfaces;
-using ToDoProject.Infrastructure.DAL;
 using ToDoProject.Infrastructure.Services;
 
 namespace ToDoProject.Infrastructure
@@ -10,9 +9,7 @@ namespace ToDoProject.Infrastructure
         public static IServiceCollection AddInfrastructure(
             this IServiceCollection services)
         {
-            services.AddScoped<IProductDAL, ProductDAL>();
             services.AddScoped<IEmailService, EmailService>();
-
             return services;
         }
     }
